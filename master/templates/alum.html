@@ -10,7 +10,15 @@
     <p>Asignaturas:</p>
     <ul>
     {%  for matricula in matriculas %}
-     <li>{{ matricula.asignatura.nombre }} ({{ matricula.asignatura.creditos }} créditos)</li>
+     <li>{{ matricula.asignatura.nombre }} ({{ matricula.asignatura.creditos }} créditos)
+        -
+         {%  if matricula.presentado %}
+             presentado ({{ matricula.nota }})
+         {%  else %}
+             no presentado
+         {% endif %}
+
+     </li>
 
     {%  endfor %}
     </ul>
