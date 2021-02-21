@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>Nombre:{{ asignatura.nombre }}</p>
+    <p>Profesores:</p>
+        {% for prof in asignatura.profesores.all %}
+            {{ prof.nombre }} {{ prof.apellidos }}
+        {% endfor %}
+    <p>Alumnado:</p>
+    <ul>
+        {% for matricula in matriculas %}
+            <li>{{ matricula.alumno.nombre }} -
+                {%  if matricula.presentado %}
+                    presentado ({{ matricula.nota }})
+                {%  else %}
+                    no presentado
+                {% endif %}
+                -
+                {{ matricula.fecha }}
+                </li>
+        {%  endfor %}
+    </ul>
+</body>
+</html>

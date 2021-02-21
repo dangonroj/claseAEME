@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Master</title>
+</head>
+<body>
+ <h1>Página de inicio de la aplicación 'Máster'</h1>
+
+ <li> Asignaturas disponibles
+    <ul>
+    {% for asignatura in asignaturas %}
+        <li>{{ asignatura.nombre }}</li>
+    {%  endfor %}
+    </ul>
+ </li>
+
+ <li> Profesorado
+    <ul>
+    {% for prof in profesores %}
+        <li>{{ prof.nombre }} {{ prof.apellidos }}</li>
+    {%  endfor %}
+    </ul>
+ </li>
+
+ <li> Alumnado matriculado
+    <ul>
+    {% for alum in alumnos %}
+        <li>{{ alum.nombre }} {{ alum.apellidos }}</li>
+    {%  endfor %}
+    </ul>
+ </li>
+</body>
+</html>

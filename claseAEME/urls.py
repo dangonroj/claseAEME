@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from holaMundo import views
 
 urlpatterns = [
@@ -27,6 +27,9 @@ urlpatterns = [
     # Ejemplo 3 - calendario
     url('calendario/', views.calendario),
     # Ejemplo 4 - calculadora
-    url('calculadora/(?P<a>\d+)/(?P<b>\d+)', views.calculadora)
+    url('calculadora/(?P<a>\d+)/(?P<b>\d+)', views.calculadora),
+
+    # Ejemplo 5 - para aplicación 'master'
+    path('master/', include('master.urls')),
 
 ]
