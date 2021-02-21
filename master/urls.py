@@ -9,5 +9,12 @@ urlpatterns = [
     path('', views.index, name='index'),
 
     # vista 2 - perfil de alumno
-    url('alum/(?P<id>\d+)/', views.ver_alum)
+    url('alum/(?P<id>\d+)/', views.ver_alum),
+
+    # vista 3 - página de asignatura
+    url('asignatura/(?P<id>\d+)/', views.ver_asignatura),
+
+    #vista 4 - formulario de búsqueda
+    url('buscar_alum/', views.buscar_alum)
+
 ]

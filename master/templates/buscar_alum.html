@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Buscar alumno/a</h1>
+
+    <form action="/master/buscar_alum/" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <p>
+          Apellidos:
+          <input id="id_q" type="text" name="q" required>
+      </p>
+
+      <input type="submit" value="Buscar" />
+</body>
+</html>
